@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "run_id": "monolith-2026-08-28-Fri-024536",
+  "created_at": "2026-08-28T02:47:13Z",
+  "machine": {
+    "hostname": "monolith",
+    "kernel": "6.17.0-41-generic",
+    "cores": 32,
+    "cpu_model": "AMD Ryzen 9 9950X 16-Core Processor"
+  },
+  "configs": [
+    {
+      "config_id": "cfg_8a6cce5a1531e6278c3a8be474d6a2ce",
+      "runtime": {
+        "kind": "OCaml",
+        "version": "ocaml-5.4.1-152d7ca",
+        "commit": "152d7ca5dd2c67ecfece73f91aea5697f95178a5"
+      },
+      "tools": [
+        "olly",
+        "perf"
+      ],
+      "_runtime_name": "ocaml-5.4.1-152d7ca",
+      "_modifiers": [
+        "perf_grp1"
+      ]
+    },
+    {
+      "config_id": "cfg_5ed4e2b667a48317ad6abab2ac0ad599",
+      "runtime": {
+        "kind": "OCaml",
+        "version": "ocaml-trunk-b1c7ed2",
+        "commit": "b1c7ed20b6cb257b06d5b6e4c2d9976e96e4056f"
+      },
+      "tools": [
+        "olly",
+        "perf"
+      ],
+      "_runtime_name": "ocaml-trunk-b1c7ed2",
+      "_modifiers": [
+        "perf_grp1"
+      ]
+    }
+  ],
+  "tool_versions": {
+    "perf": "6.17.13",
+    "olly": "0.5.4-28-g136fa34"
+  },
+  "comparisons": [
+    {
+      "kind": "inter",
+      "over": "runtime",
+      "mode": "pairwise",
+      "baseline": {
+        "runtime.version": "ocaml-5.4.1-152d7ca",
+        "runtime.options": [],
+        "runtime.commit": "152d7ca5dd2c67ecfece73f91aea5697f95178a5"
+      },
+      "variants": [
+        {
+          "runtime.version": "ocaml-trunk-b1c7ed2",
+          "runtime.options": [],
+          "runtime.commit": "b1c7ed20b6cb257b06d5b6e4c2d9976e96e4056f"
+        }
+      ],
+      "label": "ocaml-5.4.1-152d7ca -> ocaml-trunk-b1c7ed2"
+    }
+  ],
+  "benchmarks": [
+    {
+      "name": "irmin_mem_rw",
+      "suite": "macro-irmin"
+    }
+  ],
+  "_produced_by": "running-ng (native)"
+}
