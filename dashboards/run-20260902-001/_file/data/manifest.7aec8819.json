@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0",
+  "run_id": "obelisk-2026-09-02-Wed-022614",
+  "created_at": "2026-09-03T04:57:18Z",
+  "machine": {
+    "hostname": "obelisk",
+    "cpu_model": "Intel(R) Xeon(R) CPU E5-2667 v2 @ 3.30GHz",
+    "cores": 8,
+    "kernel": "6.8.0-138-generic"
+  },
+  "tool_versions": { "perf": "6.8.12", "olly": "0.5.4-28-g136fa34" },
+  "configs": [
+    {
+      "config_id": "cfg_0ac4207b369afac52b25241087ce7a88",
+      "runtime": {
+        "kind": "OCaml",
+        "version": "ocaml-5.5.0-f523850",
+        "commit": "f5238509da6029a44ba0eb648f5dff7d9c89f519"
+      },
+      "tools": [ "olly", "perf" ],
+      "_runtime_name": "ocaml-5.5.0-f523850",
+      "_modifiers": [ "perf_grp1" ]
+    },
+    {
+      "config_id": "cfg_9ac2baabb3f66f0138391e510e277d7d",
+      "runtime": {
+        "kind": "OCaml",
+        "version": "ocaml-5.5.0-f523850-fp",
+        "commit": "f5238509da6029a44ba0eb648f5dff7d9c89f519",
+        "options": [ "--enable-frame-pointers" ]
+      },
+      "tools": [ "olly", "perf" ],
+      "_runtime_name": "ocaml-5.5.0-f523850-fp",
+      "_modifiers": [ "perf_grp1" ]
+    },
+    {
+      "config_id": "cfg_8bf5ceed76a963dd14529a376c86b775",
+      "runtime": {
+        "kind": "OCaml",
+        "version": "ocaml-5.5.0-f523850-flambda",
+        "commit": "f5238509da6029a44ba0eb648f5dff7d9c89f519",
+        "options": [ "--enable-flambda" ]
+      },
+      "tools": [ "olly", "perf" ],
+      "_runtime_name": "ocaml-5.5.0-f523850-flambda",
+      "_modifiers": [ "perf_grp1" ]
+    },
+    {
+      "config_id": "cfg_45ad77533e1dfafd9268c6d056a886d0",
+      "runtime": {
+        "kind": "OCaml",
+        "version": "ocaml-5.5.0-f523850-fp-flambda",
+        "commit": "f5238509da6029a44ba0eb648f5dff7d9c89f519",
+        "options": [ "--enable-frame-pointers", "--enable-flambda" ]
+      },
+      "tools": [ "olly", "perf" ],
+      "_runtime_name": "ocaml-5.5.0-f523850-fp-flambda",
+      "_modifiers": [ "perf_grp1" ]
+    }
+  ],
+  "comparisons": [
+    {
+      "kind": "inter",
+      "label": "ocaml-5.5.0-f523850 -> ocaml-5.5.0-f523850-fp, ocaml-5.5.0-f523850-flambda, ocaml-5.5.0-f523850-fp-flambda",
+      "over": "runtime",
+      "mode": "pairwise",
+      "baseline": {
+        "runtime.version": "ocaml-5.5.0-f523850",
+        "runtime.options": [],
+        "runtime.commit": "f5238509da6029a44ba0eb648f5dff7d9c89f519"
+      },
+      "variants": [
+        {
+          "runtime.version": "ocaml-5.5.0-f523850-fp",
+          "runtime.options": [ "--enable-frame-pointers" ],
+          "runtime.commit": "f5238509da6029a44ba0eb648f5dff7d9c89f519"
+        },
+        {
+          "runtime.version": "ocaml-5.5.0-f523850-flambda",
+          "runtime.options": [ "--enable-flambda" ],
+          "runtime.commit": "f5238509da6029a44ba0eb648f5dff7d9c89f519"
+        },
+        {
+          "runtime.version": "ocaml-5.5.0-f523850-fp-flambda",
+          "runtime.options": [
+            "--enable-frame-pointers", "--enable-flambda"
+          ],
+          "runtime.commit": "f5238509da6029a44ba0eb648f5dff7d9c89f519"
+        }
+      ]
+    }
+  ],
+  "benchmarks": [
+    { "name": "sedlex_tokenize_large", "suite": "macro-sedlex" },
+    { "name": "ydump_repeat_default", "suite": "macro-yojson" },
+    { "name": "ydump_repeat_large", "suite": "macro-yojson" },
+    { "name": "zarith_pi_default", "suite": "macro-zarith" },
+    { "name": "zarith_pi_large", "suite": "macro-zarith" },
+    { "name": "owl_gc_default", "suite": "macro-owl" },
+    {
+      "name": "ocamlc_compile_uucp_default",
+      "suite": "macro-ocamlc-self-compile"
+    },
+    {
+      "name": "ocamlc_compile_uucp_large",
+      "suite": "macro-ocamlc-self-compile"
+    },
+    {
+      "name": "liq_parse_typecheck_default",
+      "suite": "macro-liquidsoap-lang"
+    },
+    { "name": "liq_parse_typecheck_large", "suite": "macro-liquidsoap-lang" },
+    { "name": "jsoo_default", "suite": "macro-jsoo" },
+    { "name": "jsoo_large", "suite": "macro-jsoo" },
+    {
+      "name": "liq_video_frames_pool_default",
+      "suite": "macro-liq-video-frames"
+    },
+    {
+      "name": "liq_video_frames_pool_large",
+      "suite": "macro-liq-video-frames"
+    },
+    { "name": "pplacer_like_default", "suite": "macro-pplacer" },
+    { "name": "pplacer_like_large", "suite": "macro-pplacer" }
+  ],
+  "_produced_by": "running-ng (native)"
+}
