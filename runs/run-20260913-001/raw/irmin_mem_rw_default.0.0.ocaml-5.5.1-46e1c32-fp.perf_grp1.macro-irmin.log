@@ -1,0 +1,891 @@
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun;  taskset -c 14 /home/udesou/.bench-agent/git/macro-benches/benchmarks/irmin/irmin_mem_rw_default-ocaml-5.5.1-46e1c32-fp 10000 0 50 1000
+running-ng v0.3.8
+Sun Sep 13 06:42:17 PM UTC 2026
+
+ 18:42:17 up 6 days, 18:36,  2 users,  load average: 0.96, 0.99, 1.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU  WHAT
+
+procs -----------memory---------- ---swap-- -----io---- -system-- -------cpu-------
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st gu
+ 0  1    512 5079872 4625100 52691416    0    0    38  1140 2411    7 11  1 79  9  0  0
+ 0  1    512 5079872 4625100 52691184    0    0     0     0 1899 3147  0  0 88 12  0  0
+
+top - 18:42:18 up 6 days, 18:36,  2 users,  load average: 0.89, 0.97, 0.99
+Tasks: 281 total,   1 running, 280 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni, 89.3 id, 10.7 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :  64272.5 total,   4960.8 free,   4063.2 used,  55972.9 buff/cache     
+MiB Swap:   8192.0 total,   8191.5 free,      0.5 used.  60209.2 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 953325 udesou    20   0   11912   5732   3580 R   9.1   0.0   0:00.01 top -bcn 1 -w512
+      1 root      20   0   22936  14244   9608 S   0.0   0.0   4:12.59 /usr/lib/systemd/systemd --system --deserialize=173
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.07 [kthreadd]
+      3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 [pool_workqueue_release]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [kworker/R-rcu_g]
+
+Environment variables: 
+	CONFIG_FILE=/home/udesou/.bench-agent/work/run-20260913-001-e1/run-20260913-001.yml
+	HOME=/home/udesou
+	LANG=en_US.UTF-8
+	LOGNAME=udesou
+	LOG_DIR=/home/udesou/.bench-agent/logs
+	OLLY_DIR=/home/udesou/.bench-agent/git/olly
+	PATH=/usr/local/bin:/home/udesou/.bench-agent/git/olly/_build/install/default/bin:/home/udesou/.opam/running-ng-tools/bin:/home/udesou/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/udesou/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/udesou/.vscode-server/cli/servers/Stable-08d4889f9ec4a1685d257b9b95de036c8e1ce1e5/server/bin/remote-cli:/home/udesou/.opam/running-ng-ocaml-5.5.0-f523850-fp-flambda/bin:/home/udesou/.local/bin:/home/udesou/.opam/running-ng-ocaml-5.5.0-f523850-fp-flambda/bin:/home/udesou/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+	PWD=/home/udesou/ocaml-bench-service
+	PYTHONPATH=/home/udesou/.bench-agent/git/running-ng/src
+	RUNNING_BENCH_DIR=/home/udesou/.bench-agent/git/macro-benches
+	RUNNING_MACRO_BENCH_DIR=/home/udesou/.bench-agent/git/macro-benches
+	RUNNING_NG_PACKAGE_DATA=/home/udesou/.bench-agent/git/running-ng/src/running/config
+	RUNNING_REUSE_SWITCHES=1
+	RUNNING_TAG=default_run,large_run
+	SHELL=/bin/bash
+	SHLVL=1
+	TERM=screen.xterm-256color
+	USER=udesou
+	_=/usr/bin/python3
+OS: Linux obelisk 6.8.0-139-generic #139-Ubuntu SMP PREEMPT_DYNAMIC Sat Aug  1 03:52:05 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+CPU: Intel(R) Xeon(R) CPU E5-2667 v2 @ 3.30GHz
+number of cores: 8
+Frequency of cpu 0: 3.30 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 1.20 GHz
+Frequency of cpu 2: 3.30 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 1.20 GHz
+Frequency of cpu 4: 3.30 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 1.20 GHz
+Frequency of cpu 6: 3.30 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 1.20 GHz
+*****
+{
+  "rusage": {
+    "user_time": 49.638,
+    "system_time": 0.03,
+    "minor_faults": 11072,
+    "major_faults": 2,
+    "voluntary_ctx_switches": 4,
+    "involuntary_ctx_switches": 11
+  },
+  "olly": {
+    "version": 2,
+    "wall_time": 49.64,
+    "cpu_time": 49.64,
+    "gc_time": 11.19,
+    "gc_overhead": 22.55,
+    "max_rss_kb": 44860,
+    "domain_stats": {
+      "0": {
+        "wall_time": 49.64,
+        "gc_time": 11.19,
+        "gc_overhead": 22.55
+      }
+    },
+    "mean_latency": 0.235957,
+    "stddev_latency": 0.2652,
+    "min_latency": 0.0,
+    "max_latency": 2.039807,
+    "distr_latency": {
+      "25.0000": 0.032559,
+      "50.0000": 0.135679,
+      "60.0000": 0.217855,
+      "70.0000": 0.314879,
+      "75.0000": 0.369663,
+      "80.0000": 0.431871,
+      "85.0000": 0.504319,
+      "90.0000": 0.592895,
+      "95.0000": 0.757247,
+      "96.0000": 0.830463,
+      "97.0000": 0.909311,
+      "98.0000": 1.000447,
+      "99.0000": 1.151999,
+      "99.9000": 1.753087,
+      "99.9900": 1.908735,
+      "99.9990": 2.039807,
+      "99.9999": 2.039807,
+      "100.0000": 2.039807
+    },
+    "outliers": {
+      "count": 0,
+      "mean_latency": 0.0,
+      "max_latency": 0.0
+    },
+    "allocations": {
+      "total_heap": 6218522743,
+      "minor_heap": 6218520627,
+      "major_heap": 560351584,
+      "promoted_words": 560349468,
+      "promoted_pct": 9.01
+    },
+    "domain_alloc_stats": {
+      "0": {
+        "total": 6218522743,
+        "minor": 6218520627,
+        "promoted": 560349468,
+        "major": 560351584,
+        "promoted_pct": 9.01
+      }
+    },
+    "collections": {
+      "minor": 24059,
+      "major": 674,
+      "forced_major": 0,
+      "compactions": 0
+    },
+    "stats_reliable": true
+  },
+  "counter_backend": "linux-perf",
+  "perf": [
+    {
+      "counter-value": "49647.721473",
+      "unit": "msec",
+      "event": "task-clock",
+      "event-runtime": 49647721473,
+      "pcnt-running": 100.0,
+      "metric-value": "0.991963",
+      "metric-unit": "CPUs utilized"
+    },
+    {
+      "counter-value": "9981.000000",
+      "unit": "",
+      "event": "page-faults",
+      "event-runtime": 49647721473,
+      "pcnt-running": 100.0,
+      "metric-value": "201.036416",
+      "metric-unit": "/sec"
+    },
+    {
+      "counter-value": "163837336760.000000",
+      "unit": "",
+      "event": "cycles",
+      "event-runtime": 49647721473,
+      "pcnt-running": 100.0,
+      "metric-value": "3.299997",
+      "metric-unit": "GHz"
+    },
+    {
+      "counter-value": "341308990700.000000",
+      "unit": "",
+      "event": "instructions",
+      "event-runtime": 49647721473,
+      "pcnt-running": 100.0,
+      "metric-value": "2.083219",
+      "metric-unit": "insn per cycle"
+    }
+  ]
+}
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun;  taskset -c 14 /home/udesou/.bench-agent/git/macro-benches/benchmarks/irmin/irmin_mem_rw_default-ocaml-5.5.1-46e1c32-fp 10000 0 50 1000
+running-ng v0.3.8
+Sun Sep 13 06:45:31 PM UTC 2026
+
+ 18:45:31 up 6 days, 18:39,  2 users,  load average: 0.95, 0.97, 1.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU  WHAT
+
+procs -----------memory---------- ---swap-- -----io---- -system-- -------cpu-------
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st gu
+ 0  1    512 5082092 4625132 52691468    0    0    38  1140 2411    7 11  1 79  9  0  0
+ 0  1    512 5082092 4625132 52691228    0    0     0   168 3819 8302  1  1 87 12  0  0
+
+top - 18:45:32 up 6 days, 18:39,  2 users,  load average: 0.95, 0.97, 1.00
+Tasks: 278 total,   1 running, 277 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  1.2 sy,  0.0 ni, 88.2 id, 10.6 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :  64272.5 total,   4963.0 free,   4061.0 used,  55973.0 buff/cache     
+MiB Swap:   8192.0 total,   8191.5 free,      0.5 used.  60211.5 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+     66 root      20   0       0      0      0 I   9.1   0.0  46:50.95 [rcuog/12]
+      1 root      20   0   22936  14244   9608 S   0.0   0.0   4:12.67 /usr/lib/systemd/systemd --system --deserialize=173
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.07 [kthreadd]
+      3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 [pool_workqueue_release]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [kworker/R-rcu_g]
+
+Environment variables: 
+	CONFIG_FILE=/home/udesou/.bench-agent/work/run-20260913-001-e1/run-20260913-001.yml
+	HOME=/home/udesou
+	LANG=en_US.UTF-8
+	LOGNAME=udesou
+	LOG_DIR=/home/udesou/.bench-agent/logs
+	OLLY_DIR=/home/udesou/.bench-agent/git/olly
+	PATH=/usr/local/bin:/home/udesou/.bench-agent/git/olly/_build/install/default/bin:/home/udesou/.opam/running-ng-tools/bin:/home/udesou/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/udesou/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/udesou/.vscode-server/cli/servers/Stable-08d4889f9ec4a1685d257b9b95de036c8e1ce1e5/server/bin/remote-cli:/home/udesou/.opam/running-ng-ocaml-5.5.0-f523850-fp-flambda/bin:/home/udesou/.local/bin:/home/udesou/.opam/running-ng-ocaml-5.5.0-f523850-fp-flambda/bin:/home/udesou/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+	PWD=/home/udesou/ocaml-bench-service
+	PYTHONPATH=/home/udesou/.bench-agent/git/running-ng/src
+	RUNNING_BENCH_DIR=/home/udesou/.bench-agent/git/macro-benches
+	RUNNING_MACRO_BENCH_DIR=/home/udesou/.bench-agent/git/macro-benches
+	RUNNING_NG_PACKAGE_DATA=/home/udesou/.bench-agent/git/running-ng/src/running/config
+	RUNNING_REUSE_SWITCHES=1
+	RUNNING_TAG=default_run,large_run
+	SHELL=/bin/bash
+	SHLVL=1
+	TERM=screen.xterm-256color
+	USER=udesou
+	_=/usr/bin/python3
+OS: Linux obelisk 6.8.0-139-generic #139-Ubuntu SMP PREEMPT_DYNAMIC Sat Aug  1 03:52:05 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+CPU: Intel(R) Xeon(R) CPU E5-2667 v2 @ 3.30GHz
+number of cores: 8
+Frequency of cpu 0: 3.30 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 1.20 GHz
+Frequency of cpu 2: 3.30 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 1.20 GHz
+Frequency of cpu 4: 3.30 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 1.20 GHz
+Frequency of cpu 6: 3.30 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 1.20 GHz
+*****
+{
+  "rusage": {
+    "user_time": 49.653,
+    "system_time": 0.037,
+    "minor_faults": 11113,
+    "major_faults": 2,
+    "voluntary_ctx_switches": 2,
+    "involuntary_ctx_switches": 2
+  },
+  "olly": {
+    "version": 2,
+    "wall_time": 49.66,
+    "cpu_time": 49.66,
+    "gc_time": 11.18,
+    "gc_overhead": 22.51,
+    "max_rss_kb": 45024,
+    "domain_stats": {
+      "0": {
+        "wall_time": 49.66,
+        "gc_time": 11.18,
+        "gc_overhead": 22.51
+      }
+    },
+    "mean_latency": 0.235633,
+    "stddev_latency": 0.26557,
+    "min_latency": 0.0,
+    "max_latency": 2.057215,
+    "distr_latency": {
+      "25.0000": 0.032895,
+      "50.0000": 0.134655,
+      "60.0000": 0.215807,
+      "70.0000": 0.313599,
+      "75.0000": 0.368127,
+      "80.0000": 0.431615,
+      "85.0000": 0.503551,
+      "90.0000": 0.592895,
+      "95.0000": 0.757759,
+      "96.0000": 0.825855,
+      "97.0000": 0.905215,
+      "98.0000": 0.995839,
+      "99.0000": 1.151999,
+      "99.9000": 1.744895,
+      "99.9900": 1.943551,
+      "99.9990": 2.057215,
+      "99.9999": 2.057215,
+      "100.0000": 2.057215
+    },
+    "outliers": {
+      "count": 0,
+      "mean_latency": 0.0,
+      "max_latency": 0.0
+    },
+    "allocations": {
+      "total_heap": 6218522369,
+      "minor_heap": 6218520253,
+      "major_heap": 559392673,
+      "promoted_words": 559390557,
+      "promoted_pct": 9.0
+    },
+    "domain_alloc_stats": {
+      "0": {
+        "total": 6218522369,
+        "minor": 6218520253,
+        "promoted": 559390557,
+        "major": 559392673,
+        "promoted_pct": 9.0
+      }
+    },
+    "collections": {
+      "minor": 24058,
+      "major": 672,
+      "forced_major": 0,
+      "compactions": 0
+    },
+    "stats_reliable": true
+  },
+  "counter_backend": "linux-perf",
+  "perf": [
+    {
+      "counter-value": "49671.479072",
+      "unit": "msec",
+      "event": "task-clock",
+      "event-runtime": 49671479072,
+      "pcnt-running": 100.0,
+      "metric-value": "0.992438",
+      "metric-unit": "CPUs utilized"
+    },
+    {
+      "counter-value": "10051.000000",
+      "unit": "",
+      "event": "page-faults",
+      "event-runtime": 49671474911,
+      "pcnt-running": 100.0,
+      "metric-value": "202.349521",
+      "metric-unit": "/sec"
+    },
+    {
+      "counter-value": "163915745184.000000",
+      "unit": "",
+      "event": "cycles",
+      "event-runtime": 49671472391,
+      "pcnt-running": 100.0,
+      "metric-value": "3.299997",
+      "metric-unit": "GHz"
+    },
+    {
+      "counter-value": "341173791065.000000",
+      "unit": "",
+      "event": "instructions",
+      "event-runtime": 49671466133,
+      "pcnt-running": 100.0,
+      "metric-value": "2.081397",
+      "metric-unit": "insn per cycle"
+    }
+  ]
+}
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun;  taskset -c 14 /home/udesou/.bench-agent/git/macro-benches/benchmarks/irmin/irmin_mem_rw_default-ocaml-5.5.1-46e1c32-fp 10000 0 50 1000
+running-ng v0.3.8
+Sun Sep 13 06:48:46 PM UTC 2026
+
+ 18:48:46 up 6 days, 18:42,  2 users,  load average: 0.99, 0.97, 1.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU  WHAT
+
+procs -----------memory---------- ---swap-- -----io---- -system-- -------cpu-------
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st gu
+ 0  1    512 5086684 4625152 52691488    0    0    38  1140 2411    7 11  1 79  9  0  0
+ 0  1    512 5086684 4625152 52691244    0    0     0     0 1692 2653  0  0 88 12  0  0
+
+top - 18:48:47 up 6 days, 18:42,  2 users,  load average: 0.99, 0.97, 1.00
+Tasks: 278 total,   1 running, 277 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  1.2 sy,  0.0 ni, 87.1 id, 11.8 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :  64272.5 total,   4967.5 free,   4056.5 used,  55973.0 buff/cache     
+MiB Swap:   8192.0 total,   8191.5 free,      0.5 used.  60216.0 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 953481 udesou    20   0   11912   5732   3580 R  10.0   0.0   0:00.01 top -bcn 1 -w512
+      1 root      20   0   22936  14244   9608 S   0.0   0.0   4:12.73 /usr/lib/systemd/systemd --system --deserialize=173
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.07 [kthreadd]
+      3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 [pool_workqueue_release]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [kworker/R-rcu_g]
+
+Environment variables: 
+	CONFIG_FILE=/home/udesou/.bench-agent/work/run-20260913-001-e1/run-20260913-001.yml
+	HOME=/home/udesou
+	LANG=en_US.UTF-8
+	LOGNAME=udesou
+	LOG_DIR=/home/udesou/.bench-agent/logs
+	OLLY_DIR=/home/udesou/.bench-agent/git/olly
+	PATH=/usr/local/bin:/home/udesou/.bench-agent/git/olly/_build/install/default/bin:/home/udesou/.opam/running-ng-tools/bin:/home/udesou/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/udesou/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/udesou/.vscode-server/cli/servers/Stable-08d4889f9ec4a1685d257b9b95de036c8e1ce1e5/server/bin/remote-cli:/home/udesou/.opam/running-ng-ocaml-5.5.0-f523850-fp-flambda/bin:/home/udesou/.local/bin:/home/udesou/.opam/running-ng-ocaml-5.5.0-f523850-fp-flambda/bin:/home/udesou/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+	PWD=/home/udesou/ocaml-bench-service
+	PYTHONPATH=/home/udesou/.bench-agent/git/running-ng/src
+	RUNNING_BENCH_DIR=/home/udesou/.bench-agent/git/macro-benches
+	RUNNING_MACRO_BENCH_DIR=/home/udesou/.bench-agent/git/macro-benches
+	RUNNING_NG_PACKAGE_DATA=/home/udesou/.bench-agent/git/running-ng/src/running/config
+	RUNNING_REUSE_SWITCHES=1
+	RUNNING_TAG=default_run,large_run
+	SHELL=/bin/bash
+	SHLVL=1
+	TERM=screen.xterm-256color
+	USER=udesou
+	_=/usr/bin/python3
+OS: Linux obelisk 6.8.0-139-generic #139-Ubuntu SMP PREEMPT_DYNAMIC Sat Aug  1 03:52:05 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+CPU: Intel(R) Xeon(R) CPU E5-2667 v2 @ 3.30GHz
+number of cores: 8
+Frequency of cpu 0: 3.30 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 1.20 GHz
+Frequency of cpu 2: 3.30 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 1.20 GHz
+Frequency of cpu 4: 3.30 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 1.20 GHz
+Frequency of cpu 6: 3.30 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 1.20 GHz
+*****
+{
+  "rusage": {
+    "user_time": 49.637,
+    "system_time": 0.031,
+    "minor_faults": 11602,
+    "major_faults": 2,
+    "voluntary_ctx_switches": 3,
+    "involuntary_ctx_switches": 8
+  },
+  "olly": {
+    "version": 2,
+    "wall_time": 49.64,
+    "cpu_time": 49.64,
+    "gc_time": 11.16,
+    "gc_overhead": 22.48,
+    "max_rss_kb": 46980,
+    "domain_stats": {
+      "0": {
+        "wall_time": 49.64,
+        "gc_time": 11.16,
+        "gc_overhead": 22.48
+      }
+    },
+    "mean_latency": 0.235239,
+    "stddev_latency": 0.264701,
+    "min_latency": 0.0,
+    "max_latency": 2.007039,
+    "distr_latency": {
+      "25.0000": 0.032687,
+      "50.0000": 0.135295,
+      "60.0000": 0.216191,
+      "70.0000": 0.314367,
+      "75.0000": 0.368895,
+      "80.0000": 0.431103,
+      "85.0000": 0.500735,
+      "90.0000": 0.590847,
+      "95.0000": 0.747519,
+      "96.0000": 0.820735,
+      "97.0000": 0.905215,
+      "98.0000": 1.003519,
+      "99.0000": 1.151999,
+      "99.9000": 1.734655,
+      "99.9900": 1.963007,
+      "99.9990": 2.007039,
+      "99.9999": 2.007039,
+      "100.0000": 2.007039
+    },
+    "outliers": {
+      "count": 0,
+      "mean_latency": 0.0,
+      "max_latency": 0.0
+    },
+    "allocations": {
+      "total_heap": 6218390921,
+      "minor_heap": 6218388805,
+      "major_heap": 558745485,
+      "promoted_words": 558743369,
+      "promoted_pct": 8.99
+    },
+    "domain_alloc_stats": {
+      "0": {
+        "total": 6218390921,
+        "minor": 6218388805,
+        "promoted": 558743369,
+        "major": 558745485,
+        "promoted_pct": 8.99
+      }
+    },
+    "collections": {
+      "minor": 24057,
+      "major": 671,
+      "forced_major": 0,
+      "compactions": 0
+    },
+    "stats_reliable": true
+  },
+  "counter_backend": "linux-perf",
+  "perf": [
+    {
+      "counter-value": "49647.268725",
+      "unit": "msec",
+      "event": "task-clock",
+      "event-runtime": 49647268725,
+      "pcnt-running": 100.0,
+      "metric-value": "0.991955",
+      "metric-unit": "CPUs utilized"
+    },
+    {
+      "counter-value": "10511.000000",
+      "unit": "",
+      "event": "page-faults",
+      "event-runtime": 49647268725,
+      "pcnt-running": 100.0,
+      "metric-value": "211.713560",
+      "metric-unit": "/sec"
+    },
+    {
+      "counter-value": "163835851734.000000",
+      "unit": "",
+      "event": "cycles",
+      "event-runtime": 49647268725,
+      "pcnt-running": 100.0,
+      "metric-value": "3.299997",
+      "metric-unit": "GHz"
+    },
+    {
+      "counter-value": "341100459152.000000",
+      "unit": "",
+      "event": "instructions",
+      "event-runtime": 49647268725,
+      "pcnt-running": 100.0,
+      "metric-value": "2.081965",
+      "metric-unit": "insn per cycle"
+    }
+  ]
+}
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun;  taskset -c 14 /home/udesou/.bench-agent/git/macro-benches/benchmarks/irmin/irmin_mem_rw_default-ocaml-5.5.1-46e1c32-fp 10000 0 50 1000
+running-ng v0.3.8
+Sun Sep 13 06:52:00 PM UTC 2026
+
+ 18:52:00 up 6 days, 18:45,  2 users,  load average: 0.98, 0.97, 1.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU  WHAT
+
+procs -----------memory---------- ---swap-- -----io---- -system-- -------cpu-------
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st gu
+ 0  1    512 5096576 4625164 52691500    0    0    38  1139 2410    7 11  1 79  9  0  0
+ 0  1    512 5096576 4625164 52691264    0    0     0     0 1694 2938  0  0 88 12  0  0
+
+top - 18:52:01 up 6 days, 18:46,  2 users,  load average: 0.98, 0.97, 1.00
+Tasks: 279 total,   1 running, 278 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni, 89.4 id, 10.6 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :  64272.5 total,   4977.1 free,   4046.8 used,  55973.1 buff/cache     
+MiB Swap:   8192.0 total,   8191.5 free,      0.5 used.  60225.7 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+     66 root      20   0       0      0      0 I   9.1   0.0  46:52.18 [rcuog/12]
+      1 root      20   0   22936  14244   9608 S   0.0   0.0   4:12.81 /usr/lib/systemd/systemd --system --deserialize=173
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.07 [kthreadd]
+      3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 [pool_workqueue_release]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [kworker/R-rcu_g]
+
+Environment variables: 
+	CONFIG_FILE=/home/udesou/.bench-agent/work/run-20260913-001-e1/run-20260913-001.yml
+	HOME=/home/udesou
+	LANG=en_US.UTF-8
+	LOGNAME=udesou
+	LOG_DIR=/home/udesou/.bench-agent/logs
+	OLLY_DIR=/home/udesou/.bench-agent/git/olly
+	PATH=/usr/local/bin:/home/udesou/.bench-agent/git/olly/_build/install/default/bin:/home/udesou/.opam/running-ng-tools/bin:/home/udesou/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/udesou/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/udesou/.vscode-server/cli/servers/Stable-08d4889f9ec4a1685d257b9b95de036c8e1ce1e5/server/bin/remote-cli:/home/udesou/.opam/running-ng-ocaml-5.5.0-f523850-fp-flambda/bin:/home/udesou/.local/bin:/home/udesou/.opam/running-ng-ocaml-5.5.0-f523850-fp-flambda/bin:/home/udesou/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+	PWD=/home/udesou/ocaml-bench-service
+	PYTHONPATH=/home/udesou/.bench-agent/git/running-ng/src
+	RUNNING_BENCH_DIR=/home/udesou/.bench-agent/git/macro-benches
+	RUNNING_MACRO_BENCH_DIR=/home/udesou/.bench-agent/git/macro-benches
+	RUNNING_NG_PACKAGE_DATA=/home/udesou/.bench-agent/git/running-ng/src/running/config
+	RUNNING_REUSE_SWITCHES=1
+	RUNNING_TAG=default_run,large_run
+	SHELL=/bin/bash
+	SHLVL=1
+	TERM=screen.xterm-256color
+	USER=udesou
+	_=/usr/bin/python3
+OS: Linux obelisk 6.8.0-139-generic #139-Ubuntu SMP PREEMPT_DYNAMIC Sat Aug  1 03:52:05 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+CPU: Intel(R) Xeon(R) CPU E5-2667 v2 @ 3.30GHz
+number of cores: 8
+Frequency of cpu 0: 3.30 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 1.20 GHz
+Frequency of cpu 2: 3.30 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 1.20 GHz
+Frequency of cpu 4: 3.30 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 1.20 GHz
+Frequency of cpu 6: 3.30 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 1.20 GHz
+*****
+{
+  "rusage": {
+    "user_time": 49.67,
+    "system_time": 0.033,
+    "minor_faults": 11075,
+    "major_faults": 2,
+    "voluntary_ctx_switches": 2,
+    "involuntary_ctx_switches": 9
+  },
+  "olly": {
+    "version": 2,
+    "wall_time": 49.68,
+    "cpu_time": 49.68,
+    "gc_time": 11.18,
+    "gc_overhead": 22.51,
+    "max_rss_kb": 44872,
+    "domain_stats": {
+      "0": {
+        "wall_time": 49.68,
+        "gc_time": 11.18,
+        "gc_overhead": 22.51
+      }
+    },
+    "mean_latency": 0.235683,
+    "stddev_latency": 0.265073,
+    "min_latency": 0.0,
+    "max_latency": 2.078719,
+    "distr_latency": {
+      "25.0000": 0.032959,
+      "50.0000": 0.136063,
+      "60.0000": 0.216703,
+      "70.0000": 0.314111,
+      "75.0000": 0.369151,
+      "80.0000": 0.429311,
+      "85.0000": 0.502783,
+      "90.0000": 0.591871,
+      "95.0000": 0.758271,
+      "96.0000": 0.825855,
+      "97.0000": 0.906239,
+      "98.0000": 0.993791,
+      "99.0000": 1.143807,
+      "99.9000": 1.785855,
+      "99.9900": 1.975295,
+      "99.9990": 2.078719,
+      "99.9999": 2.078719,
+      "100.0000": 2.078719
+    },
+    "outliers": {
+      "count": 0,
+      "mean_latency": 0.0,
+      "max_latency": 0.0
+    },
+    "allocations": {
+      "total_heap": 6218522338,
+      "minor_heap": 6218520227,
+      "major_heap": 560060632,
+      "promoted_words": 560058521,
+      "promoted_pct": 9.01
+    },
+    "domain_alloc_stats": {
+      "0": {
+        "total": 6218522338,
+        "minor": 6218520227,
+        "promoted": 560058521,
+        "major": 560060632,
+        "promoted_pct": 9.01
+      }
+    },
+    "collections": {
+      "minor": 24059,
+      "major": 674,
+      "forced_major": 0,
+      "compactions": 0
+    },
+    "stats_reliable": true
+  },
+  "counter_backend": "linux-perf",
+  "perf": [
+    {
+      "counter-value": "49682.601628",
+      "unit": "msec",
+      "event": "task-clock",
+      "event-runtime": 49682601628,
+      "pcnt-running": 100.0,
+      "metric-value": "0.992660",
+      "metric-unit": "CPUs utilized"
+    },
+    {
+      "counter-value": "9984.000000",
+      "unit": "",
+      "event": "page-faults",
+      "event-runtime": 49682601628,
+      "pcnt-running": 100.0,
+      "metric-value": "200.955660",
+      "metric-unit": "/sec"
+    },
+    {
+      "counter-value": "163952497892.000000",
+      "unit": "",
+      "event": "cycles",
+      "event-runtime": 49682601628,
+      "pcnt-running": 100.0,
+      "metric-value": "3.299998",
+      "metric-unit": "GHz"
+    },
+    {
+      "counter-value": "341267680040.000000",
+      "unit": "",
+      "event": "instructions",
+      "event-runtime": 49682601628,
+      "pcnt-running": 100.0,
+      "metric-value": "2.081503",
+      "metric-unit": "insn per cycle"
+    }
+  ]
+}
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun;  taskset -c 14 /home/udesou/.bench-agent/git/macro-benches/benchmarks/irmin/irmin_mem_rw_default-ocaml-5.5.1-46e1c32-fp 10000 0 50 1000
+running-ng v0.3.8
+Sun Sep 13 06:55:14 PM UTC 2026
+
+ 18:55:14 up 6 days, 18:49,  2 users,  load average: 0.98, 0.97, 1.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU  WHAT
+
+procs -----------memory---------- ---swap-- -----io---- -system-- -------cpu-------
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st gu
+ 0  1    512 5097668 4625168 52691536    0    0    38  1139 2410    7 11  1 79  9  0  0
+ 1  2    512 5067684 4625168 52691308    0    0     0   100 2092 3700  8  2 81  9  0  0
+
+top - 18:55:16 up 6 days, 18:49,  2 users,  load average: 0.98, 0.97, 1.00
+Tasks: 295 total,   2 running, 293 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 12.5 us,  2.3 sy,  0.0 ni, 75.0 id, 10.2 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :  64272.5 total,   4948.9 free,   4074.9 used,  55973.1 buff/cache     
+MiB Swap:   8192.0 total,   8191.5 free,      0.5 used.  60197.5 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 953642 root      20   0  122204 108524  71640 R 100.0   0.2   0:00.66 python3 /usr/share/prometheus-node-exporter-collectors/apt_info.py
+ 953874 udesou    20   0   11912   5732   3580 R   9.1   0.0   0:00.01 top -bcn 1 -w512
+ 953903 root      20   0    8904   5740   4780 D   9.1   0.0   0:00.01 /usr/sbin/smartctl -A -d sat /dev/sda
+      1 root      20   0   22936  14244   9608 S   0.0   0.0   4:12.90 /usr/lib/systemd/systemd --system --deserialize=173
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.07 [kthreadd]
+
+Environment variables: 
+	CONFIG_FILE=/home/udesou/.bench-agent/work/run-20260913-001-e1/run-20260913-001.yml
+	HOME=/home/udesou
+	LANG=en_US.UTF-8
+	LOGNAME=udesou
+	LOG_DIR=/home/udesou/.bench-agent/logs
+	OLLY_DIR=/home/udesou/.bench-agent/git/olly
+	PATH=/usr/local/bin:/home/udesou/.bench-agent/git/olly/_build/install/default/bin:/home/udesou/.opam/running-ng-tools/bin:/home/udesou/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/udesou/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/udesou/.vscode-server/cli/servers/Stable-08d4889f9ec4a1685d257b9b95de036c8e1ce1e5/server/bin/remote-cli:/home/udesou/.opam/running-ng-ocaml-5.5.0-f523850-fp-flambda/bin:/home/udesou/.local/bin:/home/udesou/.opam/running-ng-ocaml-5.5.0-f523850-fp-flambda/bin:/home/udesou/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+	PWD=/home/udesou/ocaml-bench-service
+	PYTHONPATH=/home/udesou/.bench-agent/git/running-ng/src
+	RUNNING_BENCH_DIR=/home/udesou/.bench-agent/git/macro-benches
+	RUNNING_MACRO_BENCH_DIR=/home/udesou/.bench-agent/git/macro-benches
+	RUNNING_NG_PACKAGE_DATA=/home/udesou/.bench-agent/git/running-ng/src/running/config
+	RUNNING_REUSE_SWITCHES=1
+	RUNNING_TAG=default_run,large_run
+	SHELL=/bin/bash
+	SHLVL=1
+	TERM=screen.xterm-256color
+	USER=udesou
+	_=/usr/bin/python3
+OS: Linux obelisk 6.8.0-139-generic #139-Ubuntu SMP PREEMPT_DYNAMIC Sat Aug  1 03:52:05 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+CPU: Intel(R) Xeon(R) CPU E5-2667 v2 @ 3.30GHz
+number of cores: 8
+Frequency of cpu 0: 3.30 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 1.20 GHz
+Frequency of cpu 2: 3.30 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 1.20 GHz
+Frequency of cpu 4: 3.30 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 1.20 GHz
+Frequency of cpu 6: 3.30 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 1.20 GHz
+*****
+{
+  "rusage": {
+    "user_time": 49.654,
+    "system_time": 0.033,
+    "minor_faults": 11269,
+    "major_faults": 2,
+    "voluntary_ctx_switches": 2,
+    "involuntary_ctx_switches": 13
+  },
+  "olly": {
+    "version": 2,
+    "wall_time": 49.66,
+    "cpu_time": 49.66,
+    "gc_time": 11.19,
+    "gc_overhead": 22.53,
+    "max_rss_kb": 44876,
+    "domain_stats": {
+      "0": {
+        "wall_time": 49.66,
+        "gc_time": 11.19,
+        "gc_overhead": 22.53
+      }
+    },
+    "mean_latency": 0.235839,
+    "stddev_latency": 0.265378,
+    "min_latency": 0.0,
+    "max_latency": 2.049023,
+    "distr_latency": {
+      "25.0000": 0.032207,
+      "50.0000": 0.135423,
+      "60.0000": 0.216063,
+      "70.0000": 0.314623,
+      "75.0000": 0.369407,
+      "80.0000": 0.432895,
+      "85.0000": 0.503039,
+      "90.0000": 0.593919,
+      "95.0000": 0.755711,
+      "96.0000": 0.831487,
+      "97.0000": 0.906751,
+      "98.0000": 1.004031,
+      "99.0000": 1.159167,
+      "99.9000": 1.722367,
+      "99.9900": 1.964031,
+      "99.9990": 2.049023,
+      "99.9999": 2.049023,
+      "100.0000": 2.049023
+    },
+    "outliers": {
+      "count": 0,
+      "mean_latency": 0.0,
+      "max_latency": 0.0
+    },
+    "allocations": {
+      "total_heap": 6218522105,
+      "minor_heap": 6218519994,
+      "major_heap": 560380194,
+      "promoted_words": 560378083,
+      "promoted_pct": 9.01
+    },
+    "domain_alloc_stats": {
+      "0": {
+        "total": 6218522105,
+        "minor": 6218519994,
+        "promoted": 560378083,
+        "major": 560380194,
+        "promoted_pct": 9.01
+      }
+    },
+    "collections": {
+      "minor": 24059,
+      "major": 674,
+      "forced_major": 0,
+      "compactions": 0
+    },
+    "stats_reliable": true
+  },
+  "counter_backend": "linux-perf",
+  "perf": [
+    {
+      "counter-value": "49666.823279",
+      "unit": "msec",
+      "event": "task-clock",
+      "event-runtime": 49666823279,
+      "pcnt-running": 100.0,
+      "metric-value": "0.992345",
+      "metric-unit": "CPUs utilized"
+    },
+    {
+      "counter-value": "10178.000000",
+      "unit": "",
+      "event": "page-faults",
+      "event-runtime": 49666823279,
+      "pcnt-running": 100.0,
+      "metric-value": "204.925528",
+      "metric-unit": "/sec"
+    },
+    {
+      "counter-value": "163900429807.000000",
+      "unit": "",
+      "event": "cycles",
+      "event-runtime": 49666823279,
+      "pcnt-running": 100.0,
+      "metric-value": "3.299998",
+      "metric-unit": "GHz"
+    },
+    {
+      "counter-value": "341304955906.000000",
+      "unit": "",
+      "event": "instructions",
+      "event-runtime": 49666823279,
+      "pcnt-running": 100.0,
+      "metric-value": "2.082392",
+      "metric-unit": "insn per cycle"
+    }
+  ]
+}
